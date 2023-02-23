@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 2em;
+    background-color: black;
+    max-width: 1000px;
+    margin: auto;
+    border: 5px rgb(10, 10, 10) solid;
+    color: white;
+}
+.headerLogo{
+    font-size: 1.3em;
+    align-self: center;
+}
+.headerNavbar{
+    align-self: center;
+    display: flex;
+}
+.headerNavbarBtn{
+    align-self: center;
+    border: 2px black solid;
+    padding: 0.3em 0.8em;
+    user-select: none;
+}
+.headerNavbarBtn:hover{
+    background-color: rgb(20, 20, 20);
+    border: 2px rgb(50, 50, 50) solid;
+    border-radius: 5px 20px;
+    cursor: pointer;
+}
