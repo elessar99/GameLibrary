@@ -4,6 +4,7 @@ import Gamecard from "../components/GameCard/Gamecard";
 import "./AllGame.css"
 
 const AllGame = () =>{
+    const [scrollControl, setScrollControl] = useState(true);
     const [control, setControl] = useState(false);
     const [allgame, setAllgame] = useState([]);
     const [showgames, setShowgames] = useState([]);
@@ -18,50 +19,67 @@ const AllGame = () =>{
         }
       };
 
-    const listRefresh = () =>{
-      console.log("başlattım");
-      console.log("adet ",adet);
+    const listRefresh = (listLength) =>{
       let counter =0
-      console.log(showgames);
-      showgames.splice(0,showgames.length)
-      console.log(showgames);
+      if (showgames.length>0) {
+        showgames.splice(0,showgames.length)
+      }
       allgame.map((item)=>{
         counter++ 
-        if (counter<adet) {
+        if (counter<listLength) {
           showgames.push(item)
         }
       })
       console.log(showgames);
-      console.log("bitirdim")
     }
+
     useEffect(() => {
         axios(options).then(response => {
-            let counter =0
             setAllgame(response.data)
-            response.data.map((item)=>{
-              counter++
-              if (counter<13) {
-                showgames.push(item)
-              }
-            })
-            setControl(true)
+            // response.data.map((item)=>{
+            //   counter++
+            //   if (counter<adet) {
+            //     showgames.push(item)
+            //   }
+            // })
           }).catch(function (error) {
             console.error(error);
           });
     }, []);
 
     useEffect(() => {
+      if (allgame.length>0) {
+      setControl(false)
+      listRefresh(adet)
+      setControl(true)
+      setScrollControl(!scrollControl)
+      }
+
+    }, [allgame]);
+
+
+    useEffect(() => {
+      console.log("başlattım");
       const handleScroll = (e)=>{
+        console.log("handlescrolda");
         const scrollHeight = e.target.documentElement.scrollHeight
         const currentHeight = e.target.documentElement.scrollTop + window.innerHeight
-        if (currentHeight+1 >= scrollHeight) {
+        console.log(scrollHeight);
+        console.log(currentHeight);
+        if ((currentHeight+1 >= scrollHeight)) {
+          let listLength = adet+3
           setAdet(adet+3)
-          listRefresh()
+          listRefresh(listLength)
+          setTimeout(() => {
+            setScrollControl(scrollControl? !scrollControl:!scrollControl)
+          }, 100);
+          
         }
       }
       window.addEventListener("scroll", handleScroll)
-      return () => window.removeEventListener("scroll", handleScroll)
-    }, [adet]);
+      return () => window.removeEventListener("scroll", handleScroll);
+      
+    }, [scrollControl]);
     
     return (
     <>
@@ -73,7 +91,7 @@ const AllGame = () =>{
         {showgames.length>0 && (showgames.map((item)=>{
             return(
               <>
-              <div>
+              <div key={item.id}>
                 <Gamecard name={item.title} platform={item.platform} genre={item.genre} src={item.thumbnail} />
               </div>
               </>
