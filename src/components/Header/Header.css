@@ -3,24 +3,39 @@
     justify-content: space-between;
     padding: 0.5em 2em;
     background-color: black;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
     border: 5px rgb(10, 10, 10) solid;
     color: white;
 }
 .headerLogo{
+    text-decoration: none;
     font-size: 1.3em;
     align-self: center;
+}
+.headerLogo:visited{
+    color: white;
 }
 .headerNavbar{
     align-self: center;
     display: flex;
 }
+.headerNavbarList{
+    background-color: black;
+    position: absolute;
+    z-index: 2;
+    list-style-type: none;
+    list-style-position: inside;
+}
 .headerNavbarBtn{
+    text-decoration: none;
     align-self: center;
     border: 2px black solid;
     padding: 0.3em 0.8em;
     user-select: none;
+}
+.headerNavbarBtn:visited{
+    color: white;
 }
 .headerNavbarBtn:hover{
     background-color: rgb(20, 20, 20);

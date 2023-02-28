@@ -7,10 +7,9 @@ import Router from './router/Router';
 function App() {
   return (
     
-    <div>
+    <div className='appBody'>
     <Header/>
     <Router/>
-    
     </div>
   );
 }
