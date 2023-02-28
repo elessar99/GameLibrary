@@ -1,6 +1,6 @@
 import "./Gamecard.css"
 import PropTypes from "prop-types";
-const GameCard = ({name,src,genre,platform}) =>{
+const Gamecard = ({name,src,genre,platform}) =>{
   return (
     <>
     <div className="gameCard">
@@ -11,7 +11,7 @@ const GameCard = ({name,src,genre,platform}) =>{
             {name.length<31? name : name.slice(0,30) + "..."}
         </div>
         <div className="gameCardFood">
-                {genre}    {platform}
+               | {genre}  |  {platform}  
         </div>
     </div>
     </>
@@ -19,7 +19,7 @@ const GameCard = ({name,src,genre,platform}) =>{
   );
 }
 
-GameCard.propTypes = {
+Gamecard.propTypes = {
     src: PropTypes.string,
     name: PropTypes.string,
     genre: PropTypes.string,
@@ -27,7 +27,7 @@ GameCard.propTypes = {
 
 
 }
-GameCard.defaultProps = {
+Gamecard.defaultProps = {
     src: "-",
     name: "-",
     genre: "-",
@@ -35,4 +35,4 @@ GameCard.defaultProps = {
 
 }
 
-export default GameCard;
+export default Gamecard;

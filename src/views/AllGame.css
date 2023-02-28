@@ -1,0 +1,10 @@
+.allGamePage{
+    max-width: 1150px;
+    margin: auto;
+    background-color: red;
+}
+.gameList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

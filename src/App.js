@@ -9,7 +9,6 @@ function App() {
     
     <div>
     <Header/>
-    <GameCard src={"https://www.mmobomb.com/g/452/thumbnail.jpg"} genre={"Shooter"} platform={"Windows"} name={"Call Of Duty: Warzone"}/>
     <Router/>
     
     </div>

@@ -2,6 +2,7 @@ import {useRoutes} from "react-router-dom"
 
 import "./Router.css";
 import MainView from "../views/MainView";
+import AllGame from "../views/AllGame";
 
 const Router = () => {
     const routes = useRoutes(
@@ -9,6 +10,10 @@ const Router = () => {
             {
                 path: '/',
                 element: <MainView/>
+            },
+            {
+                path: '/allgame',
+                element: <AllGame/>
             },
             {
                 path: '*',
