@@ -1,24 +1,41 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Gamecard from "../components/GameCard/Gamecard";
-import "./PcGame.css"
 
-const PcGame = ({gameCategory}) =>{
+const Game = () =>{
     const [scrollControl, setScrollControl] = useState(true);
     const [control, setControl] = useState(false);
     const [allgame, setAllgame] = useState([]);
     const [showgames, setShowgames] = useState([]);
     const [buttonClick, setButtonClick] = useState(false);
     const [adet, setAdet] = useState(13);
-    const options = {
-        method: 'GET',
-        url: `https://mmo-games.p.rapidapi.com/games`,
-        params: {platform:"pc", category: gameCategory},
-        headers: {
-          'X-RapidAPI-Key': '30fa44aac7msha71c0e6a85a26abp10736fjsn78683a7be182',
-          'X-RapidAPI-Host': 'mmo-games.p.rapidapi.com'
-        }
-      };
+    const params = useParams()
+    const optionSetting =()=>{
+      if (params.category==="all") {
+        return {
+              method: 'GET',
+              url: `https://mmo-games.p.rapidapi.com/games`,
+              params: {platform:params.platform},
+              headers: {
+                'X-RapidAPI-Key': '30fa44aac7msha71c0e6a85a26abp10736fjsn78683a7be182',
+                'X-RapidAPI-Host': 'mmo-games.p.rapidapi.com'
+              }
+            };
+          } else {
+            return {
+              method: 'GET',
+              url: `https://mmo-games.p.rapidapi.com/games`,
+              params: {platform:params.platform, category: params.category},
+              headers: {
+                'X-RapidAPI-Key': '30fa44aac7msha71c0e6a85a26abp10736fjsn78683a7be182',
+                'X-RapidAPI-Host': 'mmo-games.p.rapidapi.com'
+              }
+            };
+          }
+    }
+    
+    
 
     const listRefresh = (listLength) =>{
       let counter =0
@@ -35,7 +52,7 @@ const PcGame = ({gameCategory}) =>{
     }
 
     useEffect(() => {
-        axios(options).then(response => {
+      axios(optionSetting()).then(response => {
             setAllgame(response.data)
             // response.data.map((item)=>{
             //   counter++
@@ -46,7 +63,7 @@ const PcGame = ({gameCategory}) =>{
           }).catch(function (error) {
             console.error(error);
           });
-    }, []);
+    }, [params.category,params.platform]);
 
     useEffect(() => {
       if (allgame.length>0) {
@@ -106,5 +123,5 @@ const PcGame = ({gameCategory}) =>{
   );
 }
 
-export default PcGame;
+export default Game;
 

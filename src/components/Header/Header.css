@@ -21,11 +21,36 @@
     display: flex;
 }
 .headerNavbarList{
-    background-color: black;
+    display: none;
+    flex-direction: column;
+    padding-top: 12px;
+    background-color: rgba(0, 0, 0, 0.45);
     position: absolute;
     z-index: 2;
     list-style-type: none;
     list-style-position: inside;
+    border: 2px black solid;
+}
+
+#pcDropdown:hover #pcDropdownMenu{
+    display: flex;
+}
+
+#browserDropdown:hover #browserDropdownMenu{
+    display: flex;
+}
+
+.headerNavbarListBtn{
+    text-align: center;
+    width: 100%;
+    padding: 3px 0;
+    margin: 1px 2px;
+    align-self: center;
+    color: white;
+    text-decoration: none;
+}
+.headerNavbarListBtn:hover{
+    background-color: rgba(255, 0, 0, 0.6);
 }
 .headerNavbarBtn{
     text-decoration: none;
