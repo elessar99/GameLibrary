@@ -3,16 +3,19 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import {persistReducer,persistStore} from "redux-persist";
 import storage from 'redux-persist/lib/storage'
+import gameInfoReducer from "./reducers/gameInfoReducer";
+import newsInfoReducer from "./reducers/newsInfoReducer";
 
 const reducer=combineReducers({
-
+    gameInfo:gameInfoReducer,
+    newsInfo:newsInfoReducer,
 })
 const persistConfig={
     key:"root",
     storage,
     version:1,
     whitelist:[""],
-    blacklist:[""]
+    blacklist:["gameInfo","newsInfo"]
 }
 
 const persistedReducer=persistReducer(persistConfig,reducer)

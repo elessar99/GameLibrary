@@ -1,9 +1,16 @@
 import "./Gamecard.css"
 import PropTypes from "prop-types";
-const Gamecard = ({name,src,genre,platform}) =>{
+import GameInfo from "../../views/GameInfo";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setInfo } from "../../store/reducers/gameInfoActions";
+const Gamecard = ({name,src,genre,platform,id}) =>{
+    const dispatch=useDispatch()
   return (
     <>
-    <div className="gameCard">
+    <div className="gameCard" onClick={()=>{
+        dispatch(setInfo(true,id))
+    }} >
         <div style={{minWidth:"365px",minHeight:"206px"}}>
             <img alt="Kaynak Bulunamadı!!" src={src} />
         </div>
@@ -14,7 +21,9 @@ const Gamecard = ({name,src,genre,platform}) =>{
                | {genre}  |  {platform}  
         </div>
     </div>
+
     </>
+    
     
   );
 }
@@ -24,14 +33,14 @@ Gamecard.propTypes = {
     name: PropTypes.string,
     genre: PropTypes.string,
     platform: PropTypes.string,
-
-
+    id: PropTypes.number,
 }
 Gamecard.defaultProps = {
     src: "-",
     name: "-",
     genre: "-",
     platform: "-",
+    id: 0,
 
 }
 

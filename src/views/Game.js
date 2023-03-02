@@ -82,8 +82,6 @@ const Game = () =>{
         console.log("handlescrolda");
         const scrollHeight = e.target.documentElement.scrollHeight
         const currentHeight = e.target.documentElement.scrollTop + window.innerHeight
-        console.log(scrollHeight);
-        console.log(currentHeight);
         if ((currentHeight+1 >= scrollHeight)) {
           let listLength = adet+3
           setAdet(adet+3)
@@ -110,7 +108,7 @@ const Game = () =>{
             return(
               <>
               <div key={item.id}>
-                <Gamecard name={item.title} platform={item.platform} genre={item.genre} src={item.thumbnail} />
+                <Gamecard name={item.title} platform={item.platform} genre={item.genre} src={item.thumbnail} id={item.id} />
               </div>
               </>
             )
