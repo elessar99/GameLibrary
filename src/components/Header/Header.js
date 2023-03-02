@@ -50,7 +50,7 @@ const Header = () =>{
         <NavLink to={"allgame"} className="headerNavbarBtn">
           All Game
         </NavLink>
-        <NavLink className="headerNavbarBtn">
+        <NavLink to={"gamenews"} className="headerNavbarBtn">
           game news
         </NavLink>
         <NavLink className="headerNavbarBtn">

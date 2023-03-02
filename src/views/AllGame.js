@@ -59,9 +59,7 @@ const AllGame = () =>{
 
 
     useEffect(() => {
-      console.log("başlattım");
       const handleScroll = (e)=>{
-        console.log("handlescrolda");
         const scrollHeight = e.target.documentElement.scrollHeight
         const currentHeight = e.target.documentElement.scrollTop + window.innerHeight
         console.log(scrollHeight);

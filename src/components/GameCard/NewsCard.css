@@ -1,0 +1,28 @@
+.newsCard{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    border: 5px black solid;
+    background-color: rgba(178, 178, 178, 0.6);
+}
+.cardImg{
+    padding: 8px 8px 5px 8px;
+}
+.cardInfo{
+    display: flex;
+    flex-direction: column;
+}
+.cardTitle{
+    margin-top: 0.25em;
+    margin-bottom: 0.45em;
+
+}
+.cardShort{
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+
+
+
+
