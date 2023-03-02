@@ -1,8 +1,38 @@
 .gameInfoBody{
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     background-color: rgba(128, 128, 128, 0.8);
     width: 100%;
     height: 100%;
     margin: 0;
+}
+.gameInfoContainer{
+    background-color: white;
+    width: 90%;
+    font-size: 1.3em;
+}
+.gameInfoTop{
+    display: flex;
+    justify-content: space-between;
+}
+.gameInfoAbout{
+
+}
+.gameInfoOS{
+
+}
+.gameInfoScreenshots{
+    width: 50%;
+    min-width: 50%;
+    max-height: 500px;
+    margin-top: 1.5em;
+}
+.gameInfoScreenshot{
+    max-width: 90%;
+    max-height: 90%;
+}
+.gameInfoDescription{
+    padding: 0 1em ;
 }
