@@ -22,6 +22,8 @@
     background-color: white;
     width: 90%;
     font-size: 1.3em;
+    border: 6px black double;
+    border-radius: 0px 50px;
 }
 .gameInfoTop{
     display: flex;
