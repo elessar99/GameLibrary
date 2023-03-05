@@ -14,8 +14,8 @@ const persistConfig={
     key:"root",
     storage,
     version:1,
-    whitelist:[""],
-    blacklist:["gameInfo","newsInfo"]
+    whitelist:["newsInfo"],
+    blacklist:["gameInfo",""]
 }
 
 const persistedReducer=persistReducer(persistConfig,reducer)

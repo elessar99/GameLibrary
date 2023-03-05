@@ -2,11 +2,12 @@ import "./NewsCard.css"
 import PropTypes from "prop-types";
 import { useDispatch } from "react-redux";
 import { setNews } from "../../store/reducers/newsInfoActions";
+import { NavLink } from "react-router-dom";
 const NewsCard = ({newsTitle,src,short,id}) =>{
     const dispatch=useDispatch()
   return (
     <>
-    <div className="newsCard" onClick={()=>{
+    <NavLink className="newsCard" to={"/news"} onClick={()=>{
         dispatch(setNews(true,id))
     }} >
         <div className="cardImg">
@@ -20,7 +21,7 @@ const NewsCard = ({newsTitle,src,short,id}) =>{
                 {short}
             </div>
         </div>
-    </div>
+    </NavLink>
     </>
     
   );

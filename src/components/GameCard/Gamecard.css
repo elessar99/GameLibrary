@@ -1,16 +1,23 @@
 .gameCard{
     margin: 0.8em 2px;
     max-width: 365px;
-    box-shadow: 1px 2px rgba(20, 20, 20, 0.5);
-    background-color: rgba(200, 200, 200, 0.5);
+    box-shadow: 5px 5px 15px rgba(255, 20, 20, 0.5);
+    background-color: rgba(20, 20, 20, 0.8);
+    color: red;
+    padding-bottom: 5px;
+}
+.gameCard:hover{
+    box-shadow: 5px 5px 15px rgba(255, 20, 20, 0.8);
+    background-color: rgba(20, 20, 20, 0.9);
 }
 .gameCardHeader{
     max-width: 360px;
     max-height: 27px;
     font-size: 1.3em;
     font-weight: 500;
+    padding: 1px 0 0 3px;
 }
 .gameCardFood{
     display: flex;
-    
+    padding: 1px 0 5px 3px;
 }

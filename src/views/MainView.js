@@ -4,15 +4,10 @@ import { setInfo } from "../store/reducers/gameInfoActions";
 import "./MainPage.css"
 const MainView = () =>{
 
-  const dispatch=useDispatch()
-  const infoState=useSelector(state=>state.gameInfo)  
-  console.log(infoState);
+
   return (
     <>
-    <button onClick={()=>{
-      dispatch(setInfo(true,1136))
-      console.log(infoState)
-    }}>denemeee</button>
+
     <div className="denemex">
       <NewsCard
         newsTitle={"European Commission Extends Deadline On Decision For Microsoft's Purchase Of Activision Blizzard"}

@@ -67,7 +67,7 @@ const GameNews = () =>{
           listRefresh(listLength)
           setTimeout(() => {
             setScrollControl(scrollControl? !scrollControl:!scrollControl)
-          }, 300);
+          }, 100);
           
         }
       }
@@ -83,7 +83,7 @@ const GameNews = () =>{
       {showNews.length>0 && (showNews.map((item)=>{
         return(
           <div className="newsContainer">
-            <NewsCard src={item.thumbnail} newsTitle={item.title} short={item.short_description}/>
+            <NewsCard src={item.thumbnail} newsTitle={item.title} short={item.short_description} id={item.id} />
           </div>
         )
       }))}
