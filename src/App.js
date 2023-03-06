@@ -1,4 +1,5 @@
 import './App.css';
+import Footer from './components/Footer/Footer';
 import GameCard from './components/GameCard/Gamecard';
 import Header from './components/Header/Header';
 import Router from './router/Router';
@@ -12,6 +13,7 @@ function App() {
     <GameInfo />
     <Header/>
     <Router/>
+    <Footer/>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 .gameTagBody{
     display: flex;
     margin: auto;
-    width: 1200px;
+    max-width: 1200px;
     flex-direction: column;
 }
 .searchBtn{

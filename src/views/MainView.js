@@ -1,11 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
 import NewsCard from "../components/GameCard/NewsCard";
-import { setInfo } from "../store/reducers/gameInfoActions";
 import "./MainPage.css"
 import {shooterPc,mmorpgPc,anime} from "../store/gameStore"
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Gamecard from "../components/GameCard/Gamecard";
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -40,6 +39,7 @@ const MainView = () =>{
         }))}
       </div>
       <div className="mainPageSwiper">
+        <h2 className="swiperHeader">Shooter</h2>
         <div>
           <Swiper
             width={400}
@@ -69,6 +69,7 @@ const MainView = () =>{
            }))}
           </Swiper>
         </div>
+        <h2 className="swiperHeader">MMORPG</h2>
         <div>
         <Swiper
           width={400}
@@ -98,6 +99,7 @@ const MainView = () =>{
            }))}
           </Swiper>
         </div>
+        <h2 className="swiperHeader">Anime</h2>
         <div>
         <Swiper
           width={400}

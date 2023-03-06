@@ -5,14 +5,23 @@
 .mainPageNews{
     max-width: 1200px;
     margin: auto;
-    margin-top: 1em;
 }
 .mainNews{
-    margin: 1em;
+    margin: 1em 0 0;
 }
 .mainPageSwiper{
+    z-index: 0!important;
     width: 100%;
 }
 .mainSwiperGame{
-    margin: 2em 0;
+    z-index: 0!important;
+}
+.swiperHeader{
+    z-index: 0!important;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: red;
+    padding: 0.3em 0.5em;
+    border-bottom: 2px red double;
+    border-left: 5px red double;
 }

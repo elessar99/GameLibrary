@@ -10,23 +10,21 @@ const GameTag = () =>{
     const [control, setControl] = useState(false);
     const [showgames, setShowgames] = useState([]);
     const [count, setCount] = useState(13);
+    const [emptyList, setEmptyList] = useState(false);
     const listControl = (item)=>{
         if (state.length>0) {
             let c = true
             state.forEach((i,index)=>{
                 if (i===item) {
-                    console.log(item, " bu item var");
                     c = false
                     state.splice(index,1)
                     setState([...state])
                 }
             })
             if (c) {
-                console.log(item, " bu item yok");
                 setState([...state, item])
             }
         } else {
-            console.log(item, " liste boş ekledim");
             setState([...state, item])
         }
     }
@@ -53,8 +51,13 @@ const GameTag = () =>{
                 }
               };
               axios(options).then(response => {
-                setGameList(response.data)
-                console.log("yeni gamelist");
+                if (response.data.length>0) {
+                    setEmptyList(false)
+                    setGameList(response.data)
+                    console.log("yeni gamelist " ,response.data);
+                } else {
+                    setEmptyList(true)
+                }
               }).catch(function (error) {
                 console.error(error.response.data.message);
               });
@@ -95,7 +98,6 @@ const GameTag = () =>{
         setControl(true)
         setScrollControl(!scrollControl)
         }
-  
       }, [gameList]);
 
     useEffect(() => {
@@ -582,7 +584,7 @@ const GameTag = () =>{
             {!control&&(<div>
                 loading...
             </div>)}
-            {control&&(<div className="gameList">
+            {control&&!emptyList&&(<div className="gameList">
                 {showgames.length>0 && (showgames.map((item)=>{
                     return(
                         <>
