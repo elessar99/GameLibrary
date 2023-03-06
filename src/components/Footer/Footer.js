@@ -3,8 +3,6 @@ const Footer = () =>{
 
     return (
     <>
-
-    
     </>
     
   );
