@@ -50,7 +50,7 @@ const GameNews = () =>{
       if (gameNews.length>0) {
       setControl(false)
       listRefresh(count)
-      setControl(true)
+       setControl(true)
       setScrollControl(!scrollControl)
       }
 

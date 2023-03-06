@@ -1,3 +1,18 @@
-.denemex{
-    margin: 20em;
+.mainPageBody{
+    max-width: 1200px;
+    margin: auto;
+}
+.mainPageNews{
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 1em;
+}
+.mainNews{
+    margin: 1em;
+}
+.mainPageSwiper{
+    width: 100%;
+}
+.mainSwiperGame{
+    margin: 2em 0;
 }
