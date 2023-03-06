@@ -13,7 +13,8 @@ function App() {
     <GameInfo />
     <Header/>
     <Router/>
-    <Footer/>
+    <div className='footerArea'><Footer/></div>
+    
     </div>
   );
 }
