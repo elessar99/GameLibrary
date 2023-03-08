@@ -20,16 +20,46 @@
     background-color: rgba(128, 128, 128, 0.8);
 }
 .gameInfoContainer{
+    position: relative;
     z-index: 200;
     background-color: white;
     width: 90%;
-    font-size: 1.3em;
+    font-size: 1.2em;
     border: 6px black double;
     border-radius: 0px 50px;
 }
 .gameInfoTop{
     display: flex;
     justify-content: space-between;
+}
+@media screen and (max-width:1000px) {
+    .gameInfoContainer{
+        font-size: 1em;
+        max-height: 80%;
+        overflow: scroll;
+        border-radius: 0;
+    }::-webkit-scrollbar{
+        width: 5px;
+    }::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }::-webkit-scrollbar-thumb {
+        background: #888; 
+        border-radius: 10px;
+      }::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+    .gameInfoTop{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+}
+@media screen and (max-width:500px) {
+    .gameInfoContainer{
+        overflow: scroll;
+        max-height: 80%;
+        font-size: 0.8em;
+    }
 }
 .gameInfoAbout{
 
@@ -55,4 +85,10 @@
 }
 .gameInfoDescription{
     padding: 0 1em ;
+}
+
+@media screen and (max-width:1000px) {
+    .gameInfoScreenshots{
+        min-width: 100%;
+    }
 }

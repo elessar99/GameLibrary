@@ -61,12 +61,14 @@ const NewsInfo = () =>{
   return (
     <>
     {(infoState.show)&&(control)&&(<div className="newsInfoBody">
-      <div>
+      <div className="newsPage">
         <div>
           <h2>{stateNews.title}</h2>
           <h4>{stateNews.short_description}</h4>
         </div>
-      {(<td dangerouslySetInnerHTML={{__html: stateNews.article_content}} />)}
+      {(<td className="newsTd" dangerouslySetInnerHTML={{__html: stateNews.article_content}} />)}
+      <div className="mobilNews">Data from API do not comply with mobile devices.<br/>
+Please open with at a computer</div>
       <div className="newsSource"><a className="sourceLink" target="_blank" href={stateNews.article_url}>Source Of News</a></div>
       </div>
       

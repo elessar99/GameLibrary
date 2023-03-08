@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Header.css"
 
 const Header = () =>{
+  const [pcControl, setPcControl] = useState(false);
+  const [browserControl, setBrowserControl] = useState(false);
   return (
     <>
     <div className="header">
@@ -10,10 +13,13 @@ const Header = () =>{
       </NavLink>
       <div className="headerNavbar">
         <div id="pcDropdown" className="headerNavbarDropdown">
-          <div className="headerNavbarBtn">
+          <div className="headerNavbarBtn" onClick={()=>{
+            setBrowserControl(false)
+            setPcControl(!pcControl)
+          }}>
             PC Games
           </div>
-          <div id="pcDropdownMenu" className="headerNavbarList">
+          <div id="pcDropdownMenu"  className={pcControl? "headerNavbarList headerMobile" : "headerNavbarList"}>
             <NavLink to={"/game/pc/mmorpg"} className="headerNavbarListBtn">MMORPG</NavLink>
             <NavLink to={"/game/pc/shooter"} className="headerNavbarListBtn">Shooter</NavLink>
             <NavLink to={"/game/pc/moba"} className="headerNavbarListBtn">MOBA</NavLink>
@@ -31,10 +37,13 @@ const Header = () =>{
           </div>
         </div>
         <div id="browserDropdown" className="headerNavbarDropdown">
-          <div className="headerNavbarBtn">
+          <div className="headerNavbarBtn" onClick={()=>{
+            setPcControl(false)
+            setBrowserControl(!browserControl)
+          }}>
             Browser Games
           </div>
-          <div id="browserDropdownMenu" className="headerNavbarList">
+          <div id="browserDropdownMenu" className={browserControl? "headerNavbarList headerMobile" : "headerNavbarList"}>
             <NavLink to={"/game/browser/mmorpg"} className="headerNavbarListBtn">Browser MMORPG</NavLink>
             <NavLink to={"/game/browser/shooter"} className="headerNavbarListBtn">Browser Shooter</NavLink>
             <NavLink to={"/game/browser/anime"} className="headerNavbarListBtn">Browser Anime</NavLink>

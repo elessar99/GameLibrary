@@ -25,6 +25,19 @@
     font-weight: 500;
 }
 
+@media screen and (max-width:500px){
+    .newsCard{
+        font-size: 0.7em;
+        flex-direction: column;
+        border-left: none;
+        border-right: none;
+        padding: 0 0 0.5em;
+    }
+    .cardInfo{
+        padding: 0.5em;
+    }
+
+}
 
 
 

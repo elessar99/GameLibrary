@@ -11,3 +11,8 @@
     width: 100%;
     bottom: 0;
 }
+@media screen and (max-width:500px) {
+    .appBody{
+        min-width: 100%;
+    }
+}

@@ -11,8 +11,8 @@ const Gamecard = ({name,src,genre,platform,id}) =>{
     <div className="gameCard" onClick={()=>{
         dispatch(setInfo(true,id))
     }} >
-        <div style={{minWidth:"365px",minHeight:"206px"}}>
-            <img alt="Kaynak Bulunamadı!!" src={src} />
+        <div className="gameCardImg" >
+            <img className="gameImg" alt="Kaynak Bulunamadı!!" src={src} />
         </div>
         <div className="gameCardHeader">
             {name.length<31? name : name.slice(0,30) + "..."}

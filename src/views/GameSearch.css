@@ -18,6 +18,12 @@
     padding: 1em;
 }
 
+@media screen and (max-width:600px){
+    .searchBar{
+        padding: 1em 0;
+    }
+}
+
 .searchInput{
     box-sizing: border-box;
     height: 40px;
